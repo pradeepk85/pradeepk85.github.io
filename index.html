@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <script>
-        function createChart(fileName, chartType, xLabel, yLabel, labelArray) {
+        function createChart(fileName, chartType, xLabel, yLabel, labelArray, chartTitle) {
             // basic SVG setup
             var margin = { top: 120, right: 100, bottom: 40, left: 100 };
             var height = 600 - margin.top - margin.bottom;
@@ -68,6 +68,14 @@
 
             var focus = svg.append("g").style("display", "none");
 
+            // Add title to chart
+            svg.append("text")
+                .attr("x", (width / 2))             
+                .attr("y", 0 - (margin.top / 2))
+                .attr("text-anchor", "middle")  
+                .style("font-size", "16px") 
+                .style("text-decoration", "underline")  
+                .text(chartTitle);
             // import data and create chart
             d3.csv(fileName, function (d) {
                 let retValue = {
@@ -306,9 +314,9 @@
             x[slideIndex - 1].style.display = "block";
         }
 
-        createChart("stockexchange.csv", "exchange", "Year", "Index", ["NASDAQ", "DOW", "BANK"]);
-        createChart("bankdata.csv", "price", "Year", "Price ($)", ["JPMC", "BOFA", "CITI", "WFC", "PNC", "COF"]);
-        createChart("bankdata_volume.csv", "volume", "Year", "Volume (in Millions)", ["JPMC", "BOFA", "CITI", "WFC", "PNC", "COF"]);
+        createChart("stockexchange.csv", "exchange", "Year", "Index", ["NASDAQ", "DOW", "BANK"], "US Index growth in 10 years");
+        createChart("bankdata.csv", "price", "Year", "Price ($)", ["JPMC", "BOFA", "CITI", "WFC", "PNC", "COF"], "US Bank stock prices in 10 years");
+        createChart("bankdata_volume.csv", "volume", "Year", "Volume (in Millions)", ["JPMC", "BOFA", "CITI", "WFC", "PNC", "COF"], "US Bank stock volumes in 10 years");
     </script>
 </body>
 
