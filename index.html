@@ -36,7 +36,7 @@
     <script>
         function createChart(fileName, chartType, xLabel, yLabel, labelArray, chartTitle) {
             // basic SVG setup
-            var margin = { top: 120, right: 100, bottom: 40, left: 100 };
+            var margin = { top: 40, right: 100, bottom: 80, left: 100 };
             var height = 600 - margin.top - margin.bottom;
             var width = 960 - margin.left - margin.right;
 
@@ -217,7 +217,7 @@
                                 };
                             });
                             stock.append("text")
-                                    .attr("y",390)
+                                    .attr("y",420)
                                     .attr("x",600)
                                     .attr("text-anchor", "begin")
                                     .attr("stroke", "grayscale")
@@ -254,8 +254,8 @@
                             if (chartType === "exchange")
                             {
                                 stock.append("text")
-                                    .attr("y",410)
-                                    .attr("x",500)
+                                    .attr("y",440)
+                                    .attr("x",550)
                                     .attr("text-anchor", "begin")
                                     .attr("stroke", "grayscale")
                                     .attr("font-size", 10)
@@ -264,37 +264,37 @@
                             else 
                             {
                                 stock.append("text")
-                                    .attr("y",410)
-                                    .attr("x",540)
+                                    .attr("y",445)
+                                    .attr("x",545)
                                     .attr("text-anchor", "begin")
                                     .attr("stroke", "grayscale")
                                     .attr("font-size", 10)
                                     .text("BOFA has relatively slow growth comapre to PNC,JPMC & COF");
 
                                 stock.append("text")
-                                    .attr("y",330)
-                                    .attr("x",650)
+                                    .attr("y",360)
+                                    .attr("x",660)
                                     .attr("text-anchor", "begin")
                                     .attr("stroke", "grayscale")
                                     .attr("font-size", 10)
                                     .text("WFC has not shown growth after 2018");
 
                                 stock.append("text")
-                                    .attr("y",80)
+                                    .attr("y",90)
                                     .attr("x",760)
                                     .attr("text-anchor", "begin")
                                     .attr("stroke", "grayscale")
                                     .attr("font-size", 10)
                                     .text("PNC, JPMC and COF");
                                 stock.append("text")
-                                    .attr("y",90)
+                                    .attr("y",100)
                                     .attr("x",760)
                                     .attr("text-anchor", "begin")
                                     .attr("stroke", "grayscale")
                                     .attr("font-size", 10)
                                     .text("has shown good");
                                 stock.append("text")
-                                    .attr("y",100)
+                                    .attr("y",110)
                                     .attr("x",740)
                                     .attr("text-anchor", "begin")
                                     .attr("stroke", "grayscale")
@@ -340,13 +340,31 @@
 
     <div class="w3-content w3-display-container">
         <div id="exchange" class="mySlides" style="width:100%">
-            This is Test 1 
+            <p>This chart has the stock index data of last 10 years. This line chart shows how BANK, NASDAQ and DOW index
+                have performed. By looking at the chart we can see comparative growth as well.
+            </p>
+            <p style="color:rgb(255, 0, 255)"><i>
+                [Hover over each label to see the change in last 10 years. Use arrow on the slide
+                to naviage to different chart.]
+            </i></p>
         </div>
         <div id="price" class="mySlides" style="width:100%">
-            This is Test 2
+                <p>This chart has the top US banks stock price data of last 10 years. This line chart shows how top US banks have 
+                    performed in last decade. It also shows nice comparative study among the banks.
+                </p>
+                <p style="color:rgb(255, 0, 255)"><i>
+                    [Hover over each label to see the change in last 10 years. Use arrow on the slide
+                    to naviage to different chart.]
+                </i></p>
         </div>
         <div id="volume" class="mySlides" style="width:100%">
-            This is Test 3
+                <p>This chart has the top US banks stock volume data of last 10 years. This line chart shows 
+                    trade volumes in last 10 years. It also shows nice comparative study among them.
+                </p>
+                <p style="color:rgb(255, 0, 255)"><i>
+                    [Hover over each index legend to see the change in last 10 years. Use arrow on the slide
+                    to naviage to different chart.]
+                </i></p>
         </div>
         <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
         <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
