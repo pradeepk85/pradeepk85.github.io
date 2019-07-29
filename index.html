@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    <h1><center>CS 498 - Data Visualization in D3</center></h1>
+    <h1><u><i><center>CS 498 - Data Visualization in D3</center></i></u></h1>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -216,6 +216,13 @@
                                     d3.select("#" + chartType + "text_id" + j).style("opacity", 1);
                                 };
                             });
+                            stock.append("text")
+                                    .attr("y",390)
+                                    .attr("x",600)
+                                    .attr("text-anchor", "begin")
+                                    .attr("stroke", "grayscale")
+                                    .attr("font-size", 10)
+                                    .text("BOFA has maximum volume over the period");
                     } else {
                         // add the stock labels at the right edge of chart
                         var maxLen = data.length;
@@ -244,6 +251,56 @@
                                     d3.select("#" + chartType + "text_id" + j).style("opacity", 1);
                                 };
                             });
+                            if (chartType === "exchange")
+                            {
+                                stock.append("text")
+                                    .attr("y",410)
+                                    .attr("x",500)
+                                    .attr("text-anchor", "begin")
+                                    .attr("stroke", "grayscale")
+                                    .attr("font-size", 10)
+                                    .text("Bank Index has not grown as compare to NASDAQ and DOW");
+                            }
+                            else 
+                            {
+                                stock.append("text")
+                                    .attr("y",410)
+                                    .attr("x",540)
+                                    .attr("text-anchor", "begin")
+                                    .attr("stroke", "grayscale")
+                                    .attr("font-size", 10)
+                                    .text("BOFA has relatively slow growth comapre to PNC,JPMC & COF");
+
+                                stock.append("text")
+                                    .attr("y",330)
+                                    .attr("x",650)
+                                    .attr("text-anchor", "begin")
+                                    .attr("stroke", "grayscale")
+                                    .attr("font-size", 10)
+                                    .text("WFC has not shown growth after 2018");
+
+                                stock.append("text")
+                                    .attr("y",80)
+                                    .attr("x",760)
+                                    .attr("text-anchor", "begin")
+                                    .attr("stroke", "grayscale")
+                                    .attr("font-size", 10)
+                                    .text("PNC, JPMC and COF");
+                                stock.append("text")
+                                    .attr("y",90)
+                                    .attr("x",760)
+                                    .attr("text-anchor", "begin")
+                                    .attr("stroke", "grayscale")
+                                    .attr("font-size", 10)
+                                    .text("has shown good");
+                                stock.append("text")
+                                    .attr("y",100)
+                                    .attr("x",740)
+                                    .attr("text-anchor", "begin")
+                                    .attr("stroke", "grayscale")
+                                    .attr("font-size", 10)
+                                    .text("returns over the period");
+                            }
                     }
 
                     // mousemove function
