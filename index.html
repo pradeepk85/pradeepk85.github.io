@@ -2,10 +2,8 @@
 <html>
 
 <head>
+    <title>CS 498 Data Visualization</title>
     <meta charset="utf-8">
-    <title>d3 multi-line chart</title>
-    <!-- // <script src="js/d3.min.js" type="text/javascript"></script> -->
-    <!-- <link href="css/stylesheet.css" rel="stylesheet" /> -->
     <style>
         .line {
             fill: none;
@@ -31,15 +29,15 @@
 </head>
 
 <body>
+    <h1><center>CS 498 - Data Visualization in D3</center></h1>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
-    <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <script>
         function createChart(fileName, chartType, xLabel, yLabel, labelArray) {
             // basic SVG setup
-            var margin = { top: 20, right: 100, bottom: 40, left: 100 };
-            var height = 500 - margin.top - margin.bottom;
+            var margin = { top: 120, right: 100, bottom: 40, left: 100 };
+            var height = 600 - margin.top - margin.bottom;
             var width = 960 - margin.left - margin.right;
 
             var svg = d3.select("#" + chartType).append("svg")
@@ -81,15 +79,6 @@
                 });
 
                 return retValue;
-
-                // return {
-                //     JPMC: +d.JPMC,
-                //     BOFA: +d.BOFA,
-                //     CITI: +d.CITI,
-                //     WFC: +d.WFC,
-                //     PNC: +d.PNC,
-                //     COF: +d.COF
-                // };
             },
                 function (error, data) {
 
@@ -285,9 +274,15 @@
     </script>
 
     <div class="w3-content w3-display-container">
-        <div id="exchange" class="mySlides" style="width:100%"></div>
-        <div id="price" class="mySlides" style="width:100%"></div>
-        <div id="volume" class="mySlides" style="width:100%"></div>
+        <div id="exchange" class="mySlides" style="width:100%">
+            This is Test 1 
+        </div>
+        <div id="price" class="mySlides" style="width:100%">
+            This is Test 2
+        </div>
+        <div id="volume" class="mySlides" style="width:100%">
+            This is Test 3
+        </div>
         <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
         <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
     </div>
